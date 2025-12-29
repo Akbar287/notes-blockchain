@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# 📝 Notes Blockchain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A decentralized notes application built on Ethereum Sepolia testnet. Store your notes securely on the blockchain - transparent, immutable, and censorship-resistant.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Ethereum](https://img.shields.io/badge/Ethereum-Sepolia-627EEA?logo=ethereum&logoColor=white)
+![Solidity](https://img.shields.io/badge/Solidity-0.8.28-363636?logo=solidity&logoColor=white)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- 🔐 **Wallet Authentication** - Connect with MetaMask, WalletConnect, Coinbase Wallet
+- 📝 **CRUD Operations** - Create, Read, Update, Delete notes on blockchain
+- 🌗 **Dark/Light Mode** - Toggle theme with persistent preference
+- 🎨 **Modern UI** - Framer Motion animations, Aero Glass effects
+- 📱 **Responsive** - Works on desktop and mobile
+- 🔗 **Decentralized** - Data stored on Ethereum Sepolia testnet
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Category | Technology |
+|----------|------------|
+| Frontend | React 18, TypeScript |
+| Styling | TailwindCSS, Framer Motion |
+| Web3 | wagmi, viem, @rainbow-me/rainbowkit |
+| Smart Contract | Solidity, Hardhat |
+| Network | Ethereum Sepolia Testnet |
 
-### `npm test`
+## 🚀 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js 18+
+- Yarn or npm
+- MetaMask wallet
+- Sepolia testnet ETH ([Get from faucet](https://sepoliafaucet.com))
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Akbar287/notes-blockchain.git
+   cd notes-blockchain
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**
+   ```bash
+   yarn install
+   # or
+   npm install
+   ```
 
-### `npm run eject`
+3. **Configure environment**
+   ```bash
+   cp .env.example .env
+   ```
+   Edit `.env` and add your:
+   - `PRIVATE_KEY` - Wallet private key for deployment
+   - `SEPOLIA_RPC_URL` - Sepolia RPC endpoint
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Run development server**
+   ```bash
+   yarn start
+   # or
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📜 Smart Contract
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Deploy Contract
 
-## Learn More
+```bash
+npx hardhat run scripts/deploy.js --network sepolia
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Contract Address (Sepolia)
+```
+0xYourContractAddressHere
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Update the address in `src/contracts/notesContract.ts` after deployment.
 
-### Code Splitting
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+notes-blockchain/
+├── contracts/           # Solidity smart contracts
+│   └── NotesContract.sol
+├── scripts/             # Deployment scripts
+│   └── deploy.js
+├── src/
+│   ├── components/      # React components
+│   │   ├── cms/         # CMS components (Navbar, Footer, etc.)
+│   │   └── ui/          # UI components (Button, Dialog, etc.)
+│   ├── config/          # wagmi configuration
+│   ├── context/         # React context (Theme)
+│   ├── contracts/       # Contract ABI & addresses
+│   ├── hooks/           # Custom hooks (useNotesContract)
+│   ├── pages/           # Page components
+│   ├── router/          # React Router configuration
+│   └── middleware/      # Authentication middleware
+├── hardhat.config.js    # Hardhat configuration
+└── tailwind.config.js   # TailwindCSS configuration
+```
 
-### Analyzing the Bundle Size
+## 🔧 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Command | Description |
+|---------|-------------|
+| `yarn start` | Run development server |
+| `yarn build` | Build for production |
+| `yarn test` | Run tests |
+| `npx hardhat compile` | Compile smart contracts |
+| `npx hardhat run scripts/deploy.js --network sepolia` | Deploy to Sepolia |
 
-### Making a Progressive Web App
+## 🌐 Live Demo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Visit: [https://notes-blockchain.vercel.app](https://notes-blockchain.vercel.app) *(if deployed)*
 
-### Advanced Configuration
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+MIT License - see [LICENSE](LICENSE) for details.
 
-### Deployment
+## 👤 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Muhammad Akbar**
 
-### `npm run build` fails to minify
+- GitHub: [@Akbar287](https://github.com/Akbar287)
+- Twitter: [@Akbar287_](https://twitter.com/Akbar287_)
+- LinkedIn: [Muhammad Akbar](https://www.linkedin.com/in/muhammad-akbar-596803201/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+Made with ❤️ and Blockchain
