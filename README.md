@@ -117,7 +117,7 @@ notes-blockchain/
 
 ## 🌐 Live Demo
 
-Visit: [https://notes-blockchain.vercel.app](https://notes-blockchain.vercel.app) *(if deployed)*
+Visit: [https://notes-blockchain.vercel.app](https://notes-blockchain.vercel.app)
 
 ## 📄 License
 
